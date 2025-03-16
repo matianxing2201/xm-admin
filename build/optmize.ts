@@ -1,5 +1,3 @@
-export const include = [
-  "dayjs"
-]
+export const include = ["dayjs"];
 
 export const exclude = [];

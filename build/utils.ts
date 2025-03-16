@@ -7,7 +7,7 @@ import {
   engines,
   dependencies,
   devDependencies
-} from "../package.json"
+} from "../package.json";
 
 const root: string = process.cwd();
 
@@ -19,15 +19,16 @@ const wrapperEnv = (envConf: Recordable): ViteEnv => {
     VITE_ROUTER_HISTORY: "",
     VITE_CDN: false,
     VITE_HIDE_HOME: false
-  }
+  };
 
   // 数据格式兼容处理
   for (const envName of Object.keys(envConf)) {
     let realName = envConf[envName].replace(/\\n/g, "\n");
-    realName = realName === "true" ? true : realName === "false" ? false : realName;
+    realName =
+      realName === "true" ? true : realName === "false" ? false : realName;
 
     if (envName === "VITE_PORT") {
-      realName = Number(realName)
+      realName = Number(realName);
     }
     ret[envName] = realName;
 
@@ -37,15 +38,14 @@ const wrapperEnv = (envConf: Recordable): ViteEnv => {
       process.env[envName] = JSON.stringify(realName);
     }
   }
-  return ret
-}
+  return ret;
+};
 
 /** 平台的名称、版本、运行所需的`node`和`pnpm`版本、依赖、最后构建时间的类型提示 */
 const __APP_INFO__ = {
   pkg: { name, version, engines, dependencies, devDependencies },
   lastBuildTime: dayjs(new Date()).format("YYYY-MM-DD HH:mm:ss")
 };
-
 
 /**
  * @description: 路径转换
@@ -66,6 +66,6 @@ const pathResolve = (dir = ".", metaUrl = import.meta.url) => {
   }
   // 不在 build 目录内，返回解析后的绝对路径
   return resolvedPath;
-}
+};
 
-export { root, wrapperEnv, pathResolve, __APP_INFO__ }
+export { root, wrapperEnv, pathResolve, __APP_INFO__ };

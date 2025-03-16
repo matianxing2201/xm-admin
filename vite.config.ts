@@ -53,6 +53,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         }
       }
     },
+    // 全局变量定义
     define: {
       __INTLIFY_PROD_DEVTOOLS__: false,
       __APP_INFO__: JSON.stringify(__APP_INFO__)
