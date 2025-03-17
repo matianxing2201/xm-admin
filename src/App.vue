@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import HelloWorld from "./components/HelloWorld.vue";
+
+a = 1;
+if (a == 1) {
+  res = 1;
+}
 </script>
 
 <template>
