@@ -1,12 +1,7 @@
-import { getPluginList } from "./build/plugins"
+import { getPluginList } from "./build/plugins";
 import { include, exclude } from "./build/optmize";
-import { defineConfig, type ConfigEnv, loadEnv } from 'vite'
-import {
-  root,
-  wrapperEnv,
-  __APP_INFO__
-} from './build/utils'
-
+import { defineConfig, type ConfigEnv, loadEnv } from "vite";
+import { root, wrapperEnv, __APP_INFO__ } from "./build/utils";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
@@ -45,9 +40,9 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           chunkFileNames: "static/js/[name]-[hash].js",
           entryFileNames: "static/js/[name]-[hash].js",
           assetFileNames: "static/[ext]/[name]-[hash].[ext]",
-          manualChunks: (id) => {
-            if (id.includes('node_modules')) {
-              return id.toString().split('node_modules/')[1].split('/')[0]
+          manualChunks: id => {
+            if (id.includes("node_modules")) {
+              return id.toString().split("node_modules/")[1].split("/")[0];
             }
           }
         }
@@ -58,7 +53,5 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       __INTLIFY_PROD_DEVTOOLS__: false,
       __APP_INFO__: JSON.stringify(__APP_INFO__)
     }
-  }
-})
-
-
+  };
+});
