@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,scss,vue,html,md}\"",
-    "lint:stylelint": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/"
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{html,vue,css,scss}\" --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "^22.13.10",
@@ -34,6 +36,8 @@
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-vue": "^9.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "sass": "^1.85.1",
     "stylelint": "^16.16.0",
@@ -41,8 +45,8 @@
     "stylelint-config-recommended-vue": "^1.6.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-prettier": "^5.0.3",
-    "typescript-eslint": "^8.26.1",
     "typescript": "^5.7.2",
+    "typescript-eslint": "^8.26.1",
     "vite": "^6.2.0",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.2.4"
