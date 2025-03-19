@@ -6,7 +6,6 @@ import { root, wrapperEnv, __APP_INFO__ } from "./build/utils";
 // https://vite.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
   const { VITE_PORT, VITE_PUBLIC_PATH } = wrapperEnv(loadEnv(mode, root));
-
   return {
     base: VITE_PUBLIC_PATH,
     root,
@@ -37,9 +36,10 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         },
         // 静态资源分类打包
         output: {
-          chunkFileNames: "static/js/[name]-[hash].js",
-          entryFileNames: "static/js/[name]-[hash].js",
-          assetFileNames: "static/[ext]/[name]-[hash].[ext]",
+          dir: "dist",
+          chunkFileNames: "assets/[name]-[hash].js",
+          entryFileNames: "assets/[name]-[hash].js",
+          assetFileNames: "assets/[name]-[hash].[ext]",
           manualChunks: id => {
             if (id.includes("node_modules")) {
               return id.toString().split("node_modules/")[1].split("/")[0];
