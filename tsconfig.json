@@ -1,16 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ESNext", // 使用最新的ES标准
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "esModuleInterop": true,
-
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "types/*.d.ts",
-    "vite.config.ts"
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
   ]
 }
