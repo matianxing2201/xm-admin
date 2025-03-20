@@ -6,6 +6,12 @@ declare global {
     VITE_CDN: boolean;
     VITE_HIDE_HOME: boolean;
   }
+
+  interface PlatformConfigs {
+    Version?: string;
+    Title?: string;
+    Theme?: string;
+  }
 }
 
 export {};
