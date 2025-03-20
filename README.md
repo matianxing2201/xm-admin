@@ -19,7 +19,7 @@
 ### 二、 目录结构：
 
 ```
-  xm-admin:
+sz-template-web:
     public: 全局公共静态资源
     build:  打包配置
     src:
