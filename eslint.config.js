@@ -59,6 +59,7 @@ export default defineFlatConfig([
       ...configPrettier.rules, // 使用 Prettier 的规则
       ...pluginPrettier.configs.recommended.rules, // 使用 Prettier 推荐的规则
       "no-debugger": "off", // 关闭禁止使用 debugger 的规则
+      "always-multiline": "off",
       "no-unused-vars": [
         "error",
         {
