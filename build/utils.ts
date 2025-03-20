@@ -68,4 +68,8 @@ const pathResolve = (dir = ".", metaUrl = import.meta.url) => {
   return resolvedPath;
 };
 
-export { root, wrapperEnv, pathResolve, __APP_INFO__ };
+const alias: Record<string, string> = {
+  "@": pathResolve("../src")
+};
+
+export { root, alias, wrapperEnv, pathResolve, __APP_INFO__ };

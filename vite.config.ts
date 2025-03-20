@@ -1,3 +1,4 @@
+import path from "path";
 import { getPluginList } from "./build/plugin";
 import { include, exclude } from "./build/optmize";
 import { defineConfig, type ConfigEnv, loadEnv } from "vite";
@@ -25,6 +26,11 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     optimizeDeps: {
       include,
       exclude
+    },
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src")
+      }
     },
     build: {
       target: "es2015",

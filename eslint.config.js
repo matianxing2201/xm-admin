@@ -100,6 +100,7 @@ export default defineFlatConfig([
       "@typescript-eslint/no-unsafe-function-type": "off", // 关闭禁止不安全的函数类型的规则
       "@typescript-eslint/no-import-type-side-effects": "error", // 禁止导入类型时产生副作用
       "@typescript-eslint/explicit-module-boundary-types": "off", // 关闭要求显式模块边界类型的规则
+      "@typescript-eslint/no-empty-object-type": "error",
       "@typescript-eslint/consistent-type-imports": [
         "error",
         { disallowTypeAnnotations: false, fixStyle: "inline-type-imports" } // 强制使用一致的类型导入方式
