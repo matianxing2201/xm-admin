@@ -5,5 +5,5 @@ defineOptions({
 </script>
 
 <template>
-  <div>Dashboard</div>
+  <div class="text-lg">Dashboard</div>
 </template>
