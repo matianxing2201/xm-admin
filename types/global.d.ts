@@ -11,6 +11,8 @@ declare global {
     Version?: string;
     Title?: string;
     Theme?: string;
+    MultiTagsCache?: boolean;
+    ResponsiveStorageNameSpace?: string;
   }
 }
 

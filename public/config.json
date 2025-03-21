@@ -1,5 +1,7 @@
 {
   "Version": "0.0.1",
   "Title": "XM Admin",
-  "Theme": "light"
+  "Theme": "light",
+  "MultiTagsCache": false,
+  "ResponsiveStorageNameSpace": "responsive-"
 }

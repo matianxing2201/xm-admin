@@ -44,3 +44,8 @@ export const getPlatformConfig = async (app: App): Promise<undefined> => {
       throw "请在public文件夹下添加config.json配置文件";
     });
 };
+
+/** 本地响应式存储的命名空间 */
+const responsiveStorageNameSpace = () => getConfig().ResponsiveStorageNameSpace;
+
+export { setConfig, getConfig, responsiveStorageNameSpace };
