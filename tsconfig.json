@@ -1,15 +1,55 @@
 {
   "compilerOptions": {
-    "target": "ESNext", // 使用最新的ES标准
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "esModuleInterop": true,
+    "target": "ESNext", // 编译目标为ESNext，表示使用最新的JavaScript版本。
+    "module": "ESNext", // 使用ESNext模块系统。
+    "moduleResolution": "bundler", //  使用bundler解析模块。
+    "strict": false, // 关闭严格类型检查。
+    "jsx": "preserve", // 保留JSX语法以便在构建时处理。
+    "importHelpers": true, // 使用tslib库中的辅助函数来减少重复代码。
+    "experimentalDecorators": true, //  启用实验性的装饰器功能。
+    "strictFunctionTypes": false, // 关闭严格的函数类型检查。
+    "skipLibCheck": true, // 跳过库文件的类型检查。
+    "esModuleInterop": true, //  允许通过默认导入的方式引入CommonJS模块。
+    "isolatedModules": true, // 确保每个文件可以独立编译。
+    "allowSyntheticDefaultImports": true, // 允许合成默认导入。
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致。
+    "sourceMap": true, // 生成源映射文件以帮助调试。
+    "baseUrl": ".", // 设置基础路径为当前目录。
+    "allowJs": false, // 不允许编译JavaScript文件。
+    "resolveJsonModule": true, // 支持导入JSON模块。
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    // 定义路径别名
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@build/*": [
+        "build/*"
+      ]
+    },
+    // 指定需要包含的类型声明
+    "types": [
+      "node",
+      "vite/client",
+      "element-plus/global",
+    ]
   },
+  // 指定需要编译的文件模式
   "include": [
+    "mock/*.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "types/*.d.ts",
     "vite.config.ts"
+  ],
+  // 指定不需要编译的文件或目录
+  "exclude": [
+    "dist",
+    "**/*.js",
+    "node_modules"
   ]
 }
