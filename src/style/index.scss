@@ -1,0 +1,26 @@
+@use "theme";
+@use "element-plus";
+@use "dark";
+
+/* 自定义全局 CssVar */
+:root {
+  /** 主题色 */
+  --xm-theme-sub-menu-active-text: initial;
+  --xm-theme-menu-bg: none;
+  --xm-theme-menu-hover: none;
+  --xm-theme-sub-menu-bg: transparent;
+  --xm-theme-menu-text: initial;
+  --xm-theme-sidebar-logo: none;
+  --xm-theme-menu-title-hover: initial;
+  --xm-theme-menu-active-before: transparent;
+}
+
+/* 灰色模式 */
+.html-grey {
+  filter: grayscale(100%);
+}
+
+/* 色弱模式 */
+.html-weakness {
+  filter: invert(80%);
+}
