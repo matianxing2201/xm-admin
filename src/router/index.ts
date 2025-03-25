@@ -1,5 +1,17 @@
-import { createRouter, type Router, type RouteRecordRaw } from "vue-router";
-import { getHistoryMode, ascending } from "./utils";
+import {
+  createRouter,
+  type Router,
+  type RouteRecordRaw,
+  type RouteComponent
+} from "vue-router";
+import {
+  getHistoryMode,
+  ascending,
+  buildHierarchyTree,
+  formatFlatteningRoutes,
+  formatTwoStageRoutes
+} from "./utils";
+import otherRouter from "./modules/other";
 
 //  自动导入全部静态路由 匹配 src/router/modules 及其子目录 排除other.ts
 const modules: Record<string, any> = import.meta.glob(
@@ -15,16 +27,25 @@ const routes = [];
 Object.keys(modules).forEach(item => {
   routes.push(modules[item].default);
 });
+console.log(routes.flat(Infinity));
 
-export const constantRoutes: Array<RouteRecordRaw> = ascending(
-  routes.flat(Infinity)
+export const constantRoutes: Array<RouteRecordRaw> = formatTwoStageRoutes(
+  formatFlatteningRoutes(buildHierarchyTree(ascending(routes.flat(Infinity))))
 );
 
-console.log(constantRoutes);
+/** 用于渲染菜单，保持原始层级 */
+export const constantMenus: Array<RouteComponent> = ascending(
+  routes.flat(Infinity)
+).concat(...otherRouter);
+
+/** 不参与菜单的路由 */
+export const otherPaths = Object.keys(otherRouter).map(v => {
+  return otherRouter[v].path;
+});
 
 export const router: Router = createRouter({
   history: getHistoryMode(import.meta.env.VITE_ROUTER_HISTORY),
-  routes: routes.flat(Infinity),
+  routes: constantRoutes.concat(...(otherRouter as any)),
   strict: true,
   scrollBehavior(to, from, savedPosition) {
     return new Promise(resolve => {
