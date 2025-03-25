@@ -10,21 +10,16 @@ export default [
     }
   },
   {
-    path: "/",
-    name: "Home",
+    path: "/redirect",
     component: Layout,
-    redirect: "/dashboard",
     meta: {
-      title: "首页"
+      title: "加载中"
     },
     children: [
       {
-        path: "/dashboard",
-        name: "Dashboard",
-        component: () => import("@/views/dashboard/index.vue"),
-        meta: {
-          title: "首页"
-        }
+        path: "/redirect/:path(.*)",
+        name: "Redirect",
+        component: () => import("@/layout/")
       }
     ]
   }

@@ -11,4 +11,16 @@ function getHistoryMode(mode): RouterHistory {
     return createWebHistory(); // html5
   }
 }
-export { getHistoryMode };
+
+/**
+ * 按照路由中meta下的rank等级升序来排序路由
+ * */
+function ascending(arr: any[]) {
+  return arr.sort(
+    (a: { meta: { rank: number } }, b: { meta: { rank: number } }) => {
+      return a?.meta.rank - b?.meta.rank;
+    }
+  );
+}
+
+export { getHistoryMode, ascending };
