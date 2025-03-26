@@ -20,4 +20,17 @@ function isEmpty(value: any): boolean {
   return false;
 }
 
-export { isEmpty };
+// 递归过滤菜单，将isHide为true的菜单进行隐藏
+function getShowMenuList(menuList: Menu.MenuOptions[]) {
+  let newMenuList: Menu.MenuOptions[] = JSON.parse(JSON.stringify(menuList));
+  return newMenuList.filter(item => {
+    item.children?.length && (item.children = getShowMenuList(item.children));
+    return !item.meta?.isHide;
+  });
+}
+
+function getFlatMenuList() {
+  // doSth
+}
+
+export { isEmpty, getShowMenuList, getFlatMenuList };

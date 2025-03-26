@@ -21,4 +21,11 @@ export const router: Router = createRouter({
   }
 });
 
+/**
+ *  路由拦截
+ */
+router.beforeEach((to, from, next) => {
+  console.log(to, from, next);
+});
+
 export default router;

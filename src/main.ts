@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-import { createPinia } from "pinia";
+import pinia from "./store";
 import ElementPlus from "element-plus";
 import { getPlatformConfig } from "./config";
 import { injectResponsiveStorage } from "@/utils/responsive";
@@ -15,7 +15,7 @@ import "element-plus/dist/index.css";
 const app = createApp(App);
 
 getPlatformConfig(app).then(async config => {
-  app.use(createPinia());
+  app.use(pinia);
   app.use(router);
   await router.isReady();
   injectResponsiveStorage(app, config); // 注入响应式存储
