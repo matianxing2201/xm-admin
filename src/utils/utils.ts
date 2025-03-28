@@ -1,3 +1,5 @@
+import { cloneDeep } from "lodash-es";
+
 function isEmpty(value: any): boolean {
   if (value === null || value === undefined) {
     return true;
@@ -22,15 +24,25 @@ function isEmpty(value: any): boolean {
 
 // 递归过滤菜单，将isHide为true的菜单进行隐藏
 function getShowMenuList(menuList: Menu.MenuOptions[]) {
-  let newMenuList: Menu.MenuOptions[] = JSON.parse(JSON.stringify(menuList));
+  let newMenuList: Menu.MenuOptions[] = cloneDeep(menuList);
   return newMenuList.filter(item => {
     item.children?.length && (item.children = getShowMenuList(item.children));
     return !item.meta?.isHide;
   });
 }
 
-function getFlatMenuList() {
-  // doSth
+/**
+ * @description 使用递归扁平化菜单，方便添加动态路由
+ * @param {Array} menuList 菜单列表
+ * @returns {Array}
+ */
+
+function getFlatMenuList(menuList: Menu.MenuOptions[]): Menu.MenuOptions[] {
+  let newMenuList: Menu.MenuOptions[] = cloneDeep(menuList);
+  return newMenuList.flatMap(item => [
+    item,
+    ...(item.children ? getFlatMenuList(item.children) : [])
+  ]);
 }
 
 export { isEmpty, getShowMenuList, getFlatMenuList };
