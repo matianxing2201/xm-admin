@@ -1,11 +1,8 @@
 <template>
-  <router-view />
+    <div> layout default</div>
 </template>
-
 <script setup lang="ts">
 
 </script>
-
-<style scoped>
-
+<style scoped >
 </style>
