@@ -1,5 +1,5 @@
 import type { LanguagesType } from './types'
-import { createI18n, useI18n } from 'vue-i18n'
+import { createI18n } from 'vue-i18n'
 
 const loadedLangs = new Set<string>();
 
@@ -39,7 +39,6 @@ export async function loadI18nMsgs(lang: LanguagesType) {
     // 从 localesMap 中获取对应语言的消息文件并加载
     const messages = await localesMap[lang]?.();
 
-    console.log(messages);
 
     if (messages?.default) {
         i18n.global.setLocaleMessage(lang, messages.default);

@@ -1,3 +1,5 @@
+import { resolve } from 'node:path';
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import autoImport from 'unplugin-auto-import/vite'
@@ -7,6 +9,8 @@ import layouts from 'vite-plugin-vue-layouts'
 
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import { VitePWA } from 'vite-plugin-pwa'
+
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -38,6 +42,12 @@ export default defineConfig({
         'vue-router',
         VueRouterAutoImports
       ]
-    })
+    }),
+    VitePWA()
   ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
 })
