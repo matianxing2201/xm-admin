@@ -19,6 +19,9 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@xm-admin/hooks": "workspace:*",
+    "@xm-admin/layout": "workspace:*",
+    "@xm-admin/utils": "workspace:*",
     "@types/node": "^22.14.1",
     "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.2.1",
