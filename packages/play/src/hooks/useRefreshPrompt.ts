@@ -1,5 +1,6 @@
 import { useRegisterSW } from 'virtual:pwa-register/vue'
 import { notification, Button } from 'ant-design-vue'
+import { h } from 'vue'
 
 export function useRefreshPrompt(pollingInterval: number = 10 * 1000) {
     // 使用 useRegisterSW 注册 Service Worker

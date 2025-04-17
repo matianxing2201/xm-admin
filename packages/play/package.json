@@ -1,0 +1,33 @@
+{
+  "name": "@xm-admin/play",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "nprogress": "^0.2.0",
+    "pinia": "^3.0.2",
+    "pinia-plugin-persistedstate": "^4.2.0",
+    "vue": "^3.5.13",
+    "vue-i18n": "^11.1.3",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/nprogress": "^0.2.3",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@xm-admin/hooks": "workspace:*",
+    "@xm-admin/layout": "workspace:*",
+    "@xm-admin/utils": "workspace:*",
+    "less": "^4.3.0",
+    "unplugin-auto-import": "^19.1.2",
+    "unplugin-vue-components": "^28.4.1",
+    "unplugin-vue-router": "^0.12.0",
+    "vite-plugin-pwa": "^1.0.0",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "workbox-window": "^7.3.0"
+  }
+}
