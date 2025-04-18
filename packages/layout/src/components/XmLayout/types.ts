@@ -35,7 +35,9 @@ export interface XmLayoutProps {
      * @example 不展示dom footerRender={false}
      * @example 使用 layout 的  DefaultFooter   footerRender={() => (<DefaultFooter copyright="这是一条测试文案"/>}
      */
-    footerRender?: WithFalse<(props: XmLayoutProps, defaultDom: VNode) => VNode>
+    footerRender?: WithFalse<(props: XmLayoutProps, defaultDom: VNode) => VNode>;
+
+    showPageTags?: boolean
 }
 
 

@@ -35,19 +35,22 @@
                 </antd-space>
                 </div>
             </antd-layout-header>
+            <page-tags v-if="showPageTags"/>
         </antd-layout>
     </antd-layout>
 </template>
 <script setup lang="ts">
 import type { XmLayoutProps, XmLayoutEmits } from './types'
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue'
 import { Layout as AntdLayout, Space as AntdSpace, Spin as AntdSpin, theme } from 'ant-design-vue'
+import PageTags from '../PageTags/index.vue'
 
 defineOptions({ name: 'XmLayout' })
 
 withDefaults(defineProps<XmLayoutProps>(), {
     pure: false,
-    loading: false
+    loading: false,
+    showPageTags: true
 })
 
 const { Sider: AntdLayoutSilder, Header: AntdLayoutHeader, Content: AntdLayoutContent } = AntdLayout

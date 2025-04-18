@@ -1,6 +1,7 @@
 <template>
    <xm-layout
       v-model:collapsed="collapsed"
+      showPageTags:true
    >
       <!-- logo -->
       <template #logo>
