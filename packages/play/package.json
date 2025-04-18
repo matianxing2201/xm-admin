@@ -22,7 +22,6 @@
     "@xm-admin/hooks": "workspace:*",
     "@xm-admin/layout": "workspace:*",
     "@xm-admin/utils": "workspace:*",
-    "less": "^4.3.0",
     "unplugin-auto-import": "^19.1.2",
     "unplugin-vue-components": "^28.4.1",
     "unplugin-vue-router": "^0.12.0",

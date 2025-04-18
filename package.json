@@ -19,6 +19,7 @@
     "@vitejs/plugin-vue-jsx": "^4.0.1",
     "@vue/tsconfig": "^0.5.1",
     "ant-design-vue": "^4.2.6",
+    "less": "^4.3.0",
     "typescript": "^5.6.3",
     "vite": "^6.2.0",
     "vue-tsc": "^2.1.10"
@@ -26,8 +27,8 @@
   "dependencies": {
     "@xm-admin/hooks": "workspace:*",
     "@xm-admin/layout": "workspace:*",
-    "@xm-admin/utils": "workspace:*",
     "@xm-admin/play": "workspace:*",
+    "@xm-admin/utils": "workspace:*",
     "lodash-es": "^4.17.21",
     "vue": "^3.5.12"
   }

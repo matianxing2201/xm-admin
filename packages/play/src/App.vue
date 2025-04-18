@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRefreshPrompt } from './hooks'
+import { useRefreshPrompt } from '@xm-admin/hooks'
 
 useRefreshPrompt();
 </script>

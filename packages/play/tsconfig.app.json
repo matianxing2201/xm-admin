@@ -16,5 +16,5 @@
 		]
   },
 
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "packages/play/auto-imports.d.ts", "packages/play/auto-imports.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "packages/play/auto-imports.d.ts", "packages/play/auto-imports.d.ts", "../hooks/index.ts", "../hooks/useRefreshPrompt.ts"]
 }
