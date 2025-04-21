@@ -2,7 +2,7 @@
     <div class="header-action-container">
         <a-menu mode="horizontal" :selectable="false" class="header-menu">
             <a-menu-item>
-                <!-- todo 全屏切换 -->
+                 <screenfull-toggle />
             </a-menu-item>
             <a-menu-item>
                 <!-- 皮肤切换 -->

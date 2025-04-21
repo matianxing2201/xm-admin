@@ -36,6 +36,12 @@
                 </div>
             </antd-layout-header>
             <page-tags v-if="showPageTags"/>
+            <antd-layout-content :style="{overflowY: 'scroll'}">
+                <antd-spin :spinning="loading">
+                    <div class="page-container">
+                    </div>
+                </antd-spin>
+            </antd-layout-content>
         </antd-layout>
     </antd-layout>
 </template>
@@ -106,6 +112,25 @@ function updatedCollapsed(val: boolean) {
             flex: 1;
             overflow-x: auto;
         }
+    }
+
+    .page-container {
+        overflow-x: hidden;
+    }
+
+    .fade-transform-enter-active,
+    .fade-transform-leave-active {
+        transition: all 0.5s;
+    }
+
+    .fade-transform-enter-from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    .fade-transform-leave-to {
+        opacity: 0;
+        transform: translateX(-50px);
     }
 }
 </style>
