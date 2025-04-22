@@ -6,6 +6,7 @@
             </a-menu-item>
             <a-menu-item>
                 <!-- 皮肤切换 -->
+                <color-mode-toggle />
             </a-menu-item>
             <a-menu-item>
                 <!-- 语言切换 -->

@@ -13,7 +13,11 @@
 			"unplugin-vue-router/client",
 			"vite-plugin-vue-layouts/client",
       "vite-plugin-pwa/client"
-		]
+		],
+    "paths": {
+      "@/*": ["./src/*"],
+			"@config/*": ["./src/config/*"],
+    }
   },
 
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "packages/play/auto-imports.d.ts", "packages/play/auto-imports.d.ts", "../hooks/index.ts", "../hooks/useRefreshPrompt.ts"]

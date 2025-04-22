@@ -35,7 +35,7 @@
                 </antd-space>
                 </div>
             </antd-layout-header>
-            <page-tags v-if="showPageTags"/>
+            <!-- <page-tags v-if="showPageTags"/> -->
             <antd-layout-content :style="{overflowY: 'scroll'}">
                 <antd-spin :spinning="loading">
                     <div class="page-container">
