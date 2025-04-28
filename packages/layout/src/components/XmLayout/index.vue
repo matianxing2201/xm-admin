@@ -26,11 +26,11 @@
                         <menu-unfold-outlined v-if="collapsed" class="trigger" @click="updatedCollapsed(false)" />
                         <menu-fold-outlined v-else class="trigger" @click="updatedCollapsed(true)" />
                         <slot name="breadcrumb">
-                           
+                           <breadcrumb />
                         </slot>
                     </slot>
                 </div>
-                <antd-space align="center" class="flex-shrink-0">
+                <antd-space align="center" class="shrink">
                     <slot name="headerActions" />
                 </antd-space>
                 </div>
@@ -50,6 +50,7 @@ import type { XmLayoutProps, XmLayoutEmits } from './types'
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue'
 import { Layout as AntdLayout, Space as AntdSpace, Spin as AntdSpin, theme } from 'ant-design-vue'
 import PageTags from '../PageTags/index.vue'
+import Breadcrumb from './Breadcrumb.vue'
 
 defineOptions({ name: 'XmLayout' })
 
@@ -111,6 +112,10 @@ function updatedCollapsed(val: boolean) {
         .container-left {
             flex: 1;
             overflow-x: auto;
+        }
+
+        .shrink {
+            height: 64px;
         }
     }
 
