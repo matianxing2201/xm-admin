@@ -1,1 +1,1 @@
-export * from './useRefreshPrompt'
+export * from './useRefreshPrompt';

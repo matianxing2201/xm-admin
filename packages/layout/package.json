@@ -2,11 +2,11 @@
   "name": "@xm-admin/layout",
   "version": "0.0.1",
   "description": "",
+  "author": "matianxing",
+  "license": "ISC",
+  "keywords": [],
   "main": "src/index.ts",
   "scripts": {
     "build": "vite build"
-  },
-  "keywords": [],
-  "author": "matianxing",
-  "license": "ISC"
+  }
 }

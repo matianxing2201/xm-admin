@@ -2,27 +2,14 @@
   "name": "xm-admin",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
     "dev": "pnpm -F @xm-admin/play dev",
-    "build": "pnpm -F @xm-admin/play build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@ant-design/icons-vue": "^7.0.1",
-    "@tsconfig/node20": "^20.1.4",
-    "@types/lodash-es": "^4.17.12",
-    "@types/node": "^22.9.0",
-    "@vitejs/plugin-vue": "^5.1.4",
-    "@vitejs/plugin-vue-jsx": "^4.0.1",
-    "@vue/tsconfig": "^0.5.1",
-    "ant-design-vue": "^4.2.6",
-    "less": "^4.3.0",
-    "typescript": "^5.6.3",
-    "vite": "^6.2.0",
-    "vue-tsc": "^2.1.10"
+    "build": "pnpm -F @xm-admin/play build",
+    "lint": "eslint --ignore-pattern .gitignore --fix"
   },
   "dependencies": {
     "@vueuse/core": "^10.11.1",
@@ -33,5 +20,21 @@
     "lodash-es": "^4.17.21",
     "vue": "^3.5.12",
     "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@antfu/eslint-config": "^4.12.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.9.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "@vue/tsconfig": "^0.5.1",
+    "ant-design-vue": "^4.2.6",
+    "eslint": "^9.25.1",
+    "less": "^4.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^6.2.0",
+    "vue-tsc": "^2.1.10"
   }
 }

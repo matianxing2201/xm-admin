@@ -1,38 +1,47 @@
-<template>
-    <div class="page-tags-container">
-        <antd-dropdown :trigger="['contextmenu']">
-            <div class="scroll-view">
-                <TransitionGroup name="tags">
-                    <antd-tag draggable="true">tag</antd-tag>
-                    <antd-tag draggable="true">tag</antd-tag>
-                    <antd-tag draggable="true">tag</antd-tag>
-                </TransitionGroup>
-            </div>
-            <template #overlay>
-                <dropdown-menu></dropdown-menu>
-            </template>
-        </antd-dropdown>
-        <div class="page-tags-right">
-            <antd-space>
-                <antd-dropdown>
-                    <menu-outlined />
-                    <template #overlay>
-                        <dropdown-menu />
-                    </template>
-                </antd-dropdown>
-            </antd-space>
-        </div>
-    </div>
-</template>
 <script setup lang="ts">
-import { Dropdown as AntdDropdown, Tag as AntdTag, Space as AntdSpace } from 'ant-design-vue'
 import { MenuOutlined } from '@ant-design/icons-vue';
+import { Dropdown as AntdDropdown, Space as AntdSpace, Tag as AntdTag } from 'ant-design-vue';
 
-import DropdownMenu from './DropdownMenu.vue'
+import DropdownMenu from './DropdownMenu.vue';
+
 defineOptions({
-    name: "PageTags"
-})
+  name: 'PageTags'
+});
 </script>
+
+<template>
+  <div class="page-tags-container">
+    <antd-dropdown :trigger="['contextmenu']">
+      <div class="scroll-view">
+        <TransitionGroup name="tags">
+          <antd-tag draggable="true">
+            tag
+          </antd-tag>
+          <antd-tag draggable="true">
+            tag
+          </antd-tag>
+          <antd-tag draggable="true">
+            tag
+          </antd-tag>
+        </TransitionGroup>
+      </div>
+      <template #overlay>
+        <dropdown-menu />
+      </template>
+    </antd-dropdown>
+    <div class="page-tags-right">
+      <antd-space>
+        <antd-dropdown>
+          <menu-outlined />
+          <template #overlay>
+            <dropdown-menu />
+          </template>
+        </antd-dropdown>
+      </antd-space>
+    </div>
+  </div>
+</template>
+
 <style scoped lang='less'>
 .page-tags-container {
   display: inline-flex;

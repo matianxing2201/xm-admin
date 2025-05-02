@@ -1,4 +1,4 @@
-import type { Slot, VNode, VNodeChild } from 'vue'
+import type { Slot, VNode, VNodeChild } from 'vue';
 
 export type VueNode = Slot | VNode | VNodeChild;
 

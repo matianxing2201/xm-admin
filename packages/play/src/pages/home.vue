@@ -1,9 +1,10 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <div>Home</div>
   {{ $t('common.back') }}
 </template>
 
-<script setup lang="ts">
-</script>
-<style scoped>
+<style scoped lang="less">
 </style>

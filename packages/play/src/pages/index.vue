@@ -1,8 +1,10 @@
-<template>
-    <div>Index</div>
-</template>
 <script setup lang="ts">
 
 </script>
-<style scoped >
+
+<template>
+  <div>Index</div>
+</template>
+
+<style scoped lang="less">
 </style>

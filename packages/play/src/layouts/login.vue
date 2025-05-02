@@ -1,12 +1,14 @@
-<template>
-    <div class="login-container">
-        <router-view />
-    </div>
-</template>
 <script setup lang="ts">
 
 </script>
-<style scoped>
+
+<template>
+  <div class="login-container">
+    <router-view />
+  </div>
+</template>
+
+<style scoped lang="less">
 .login-container {
   min-height: 100%;
   min-width: 100%;
