@@ -62,7 +62,9 @@ function updatedCollapsed(val: boolean) {
       <!-- <page-tags v-if="showPageTags"/> -->
       <antd-layout-content :style="{ overflowY: 'scroll' }">
         <antd-spin :spinning="loading">
-          <div class="page-container" />
+          <div class="page-container">
+            <router-view />
+          </div>
         </antd-spin>
       </antd-layout-content>
     </antd-layout>
