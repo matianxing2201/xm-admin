@@ -5,5 +5,14 @@
   "description": "",
   "author": "",
   "license": "ISC",
-  "keywords": []
+  "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./global": {
+      "types": "./global.d.ts"
+    }
+  }
 }

@@ -1,6 +1,8 @@
+import type { ResultData } from '@xm-admin/types';
 import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import axios from 'axios';
 import { ResultEnum } from './src/enums/httpEnum';
+import { checkStatus } from './src/helper/checkStatus';
 
 export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   loading?: boolean
@@ -31,7 +33,7 @@ class RequestHttp {
 
     this.service.interceptors.response.use(
       (response: AxiosResponse & { config: CustomAxiosRequestConfig }) => {
-        const { data, config } = response;
+        const { data, config } = response; // config 后面用于取消请求与loading状态显示
 
         // 登录失效
         if (data.code === ResultEnum.OVERDUE) {
@@ -47,9 +49,35 @@ class RequestHttp {
       async (error: AxiosError) => {
         const { response } = error;
 
+        // 更具服务响应错误码 提示
+        if (response)
+          checkStatus(response.status);
         return Promise.reject(error);
       }
     );
+  }
+
+  /**
+   * @description 常用请求方法封装
+   */
+  get<T>(url: string, params?: object, _object = {}): Promise<ResultData<T>> {
+    return this.service.get(url, { params, ..._object });
+  }
+
+  post<T>(url: string, params?: object | string, _object = {}): Promise<ResultData<T>> {
+    return this.service.post(url, params, _object);
+  }
+
+  put<T>(url: string, params?: object, _object = {}): Promise<ResultData<T>> {
+    return this.service.put(url, params, _object);
+  }
+
+  delete<T>(url: string, params?: any, _object = {}): Promise<ResultData<T>> {
+    return this.service.delete(url, { params, ..._object });
+  }
+
+  download(url: string, params?: object, _object = {}): Promise<BlobPart> {
+    return this.service.post(url, params, { ..._object, responseType: 'blob' });
   }
 }
 
